@@ -5,9 +5,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../icon/sk (1).ico"/>
-    <title>Document</title>
+    <title>后台主页</title>
+    <!-- 引入jQuery -->
+    <script src="../js/jQuery-min.js"></script>
+    <!-- 引入第三方的图标库 -->
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <!-- 引入layui的css -->
+    <link rel="stylesheet" href="../library/layui/css/layui.css">
+    <!-- 引入独有的CSS -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- 引入独有的js -->
+    <script src="../js/index.js"></script>
+
 </head>
 <body>
-    
-</body>
+    <div class="layui-layout layui-layout-admin">
+      <div class="layui-header">
+        <div class="layui-logo layui-hide-xs layui-bg-black"><img src="../images/logo.png" alt=""></div>
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+ 
+        <ul class="layui-nav layui-layout-right">
+          <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+            <a href="javascript:;">
+              <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
+              <span class="text-avatar">A</span>
+              欢迎用户
+            </a>
+            <dl class="layui-nav-child">
+              <dd><a href="">基本资料</a></dd>
+              <dd><a href="">更换头像</a></dd>
+              <dd><a href="">重置密码</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+            <a href="javascript:;" id="btn_out">
+              <span class="iconfont icon-tuichu"></span>
+                退出
+              <i class="layui-icon layui-icon-more-vertical"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+          <div class="userinfo">
+            <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
+            <span class="text-avatar">A</span>
+            <span id="welcome">欢迎</span>
+          </div>
+          <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+          <ul class="layui-nav layui-nav-tree" lay-shrink="all">
+              <!-- 默认选中首页 -->
+            <li class="layui-nav-item layui-this"><a href="/html/dashboard.html" target="ifm"><span class="iconfont icon-home"></span>首页</a></li>
+            <li class="layui-nav-item">
+              <a class="" href="javascript:;" target="ifm"><span class="iconfont icon-16"></span>文章管理</a>
+              <dl class="layui-nav-child">
+                <dd><a href="javascript:;" target="ifm"><i class="layui-icon layui-icon-app"></i>文章类别</a></dd>
+                <dd><a href="javascript:;" target="ifm"><i class="layui-icon layui-icon-align-left"></i>文章列表</a></dd>
+                <dd><a href="javascript:;" target="ifm"><i class="layui-icon layui-icon-survey"></i>发布文章</a></dd>
+              </dl>
+            </li>
+            <li class="layui-nav-item">
+              <a href="javascript:;" target="ifm"><span class="iconfont icon-user"></span>个人中心</a>
+              <dl class="layui-nav-child">
+                <dd><a href="../html/users/information.html" target="ifm"><i class="layui-icon layui-icon-auz"></i>基本资料</a></dd>
+                <dd><a href="javascript:;" target="ifm"><i class="layui-icon layui-icon-refresh-3"></i>更换头像</a></dd>
+                <dd><a href="javascript:;" target="ifm"><i class="layui-icon layui-icon-slider"></i>重置密码</a></dd>
+              </dl>
+            </li>          
+          </ul>
+        </div>
+      </div>
+      
+      <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <!-- 用于展示各个页面，接收地址 -->
+        <iframe name="ifm" src="/html/dashboard.html" frameborder="0"></iframe>
+      </div>
+      
+      <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        @文章管理系统，已发布至github
+      </div>
+    </div>
+    <!-- 尽量写在底部-->
+        <!-- 引入layui的js -->
+        <script src="../library/layui/layui.all.js"></script>
+        <!-- 引入拼接URL的动作 -->
+        <script src="../js/jiequ.js"></script>
+        <script>
+        layui.use(['element', 'layer', 'util'], function(){
+            var element = layui.element
+            ,layer = layui.layer
+            ,util = layui.util
+            ,$ = layui.$;
+            
+            //头部事件
+            util.event('lay-header-event', {
+              //左侧菜单事件
+              menuLeft: function(othis){
+                layer.msg('展开左侧菜单的操作', {icon: 0});
+              }
+              ,menuRight: function(){
+                layer.open({
+                  type: 1
+                  ,content: '<div style="padding: 15px;">w</div>'
+                  ,area: ['260px', '100%']
+                  ,offset: 'rt' //右上角
+                  ,anim: 5
+                  ,shadeClose: true
+                });
+              }
+            });
+            
+          });
+          </script>
+    </body>
 </html>
