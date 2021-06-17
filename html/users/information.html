@@ -12,21 +12,26 @@
      <link rel="stylesheet" href="../../library/layui/css/layui.css">
      <!-- 引入独有的CSS -->
      <link rel="stylesheet" href="../../css/users/information.css">
-     <!-- 引入独有的js -->
-     <script src="../../js/users/information.js"></script>
-     <!-- 引入拼接URL的动作 -->
-     <script src="../../js/jiequ.js"></script>
+    <!-- 引入layui的js -->
+    <script src="../../library/layui/layui.all.js"></script>
+    <!-- 引入拼接URL的动作 -->
+    <script src="../../js/jiequ.js"></script>
+    <!-- 引入独有的js -->
+    <script src="../../js/users/information.js"></script>
 </head>
 <body>
     <div class="layui-card">
         <div class="layui-card-header">修改用户信息</div>
         <div class="layui-card-body">
             <!-- 页面区域 -->
-            <form class="layui-form" action="">
+            <form class="layui-form" lay-filter="formUserInfo">
+                <!-- 表单中的隐藏于，用于接收ID的填充 -->
+                <input type="hidden" name="id" value="" />
+
                 <div class="layui-form-item">
                   <label class="layui-form-label">登录名称</label>
                   <div class="layui-input-block">
-                    <input type="text" name="username" required  lay-verify="required" placeholder="登录名称" autocomplete="off" class="layui-input">
+                    <input type="text" name="username" required  lay-verify="required" placeholder="登录名称" autocomplete="off" class="layui-input" readonly>
                   </div>
                 </div>
 
@@ -40,7 +45,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户邮箱</label>
                     <div class="layui-input-block">
-                      <input type="text" name="useremail" required  lay-verify="required|email" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                      <input type="text" name="email" required  lay-verify="required|email" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <!-- 提交按钮 -->
@@ -56,7 +61,6 @@
 
 
 
-    <!-- 引入layui的js -->
-    <script src="../../library/layui/layui.all.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户头像</title>
+    <link rel="shortcut icon" href="../../icon/d1.ico"/>
+    <!-- 引入layui的css -->
+    <link rel="stylesheet" href="../../library/layui/css/layui.css">
+    <!-- 引入独有的CSS -->
+    <link rel="stylesheet" href="../../css/users/changeavatar.css">
+    <!-- 引入cropper结构css -->
+    <link rel="stylesheet" href="../../library/cropper/cropper.css" />
+    <!-- 引入layui的js -->
+    <script src="../../library/layui/layui.all.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../library/jquery.js"></script>
+    <!-- 引入cropper结构js -->
+    <script src="../../library/cropper/Cropper.js"></script>
+    <!-- 引入cropper结构合成js -->
+    <script src="../../library/cropper/jquery-cropper.js"></script>
+    <!-- 引入拼接URL的动作 -->
+    <script src="../../js/jiequ.js"></script>
+    <!-- 引入独有的js -->
+    <script src="../../js/users/changeavatar.js"></script>
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">卡片面板</div>
+        <div class="layui-card-body">
+            <!-- 页面主体结构 -->
+            <!-- 第一行的图片裁剪和预览区域 -->
+            <div class="row1">
+            <!-- 图片裁剪区域 -->
+            <div class="cropper-box">
+            <!-- 这个 img 标签很重要，将来会把它初始化为裁剪区域 -->
+            <img id="image" src="../../images/img-4cec654eecee37a8aaa35615812d99d9.jpg" />
+            </div>
+            <!-- 图片的预览区域 -->
+            <div class="preview-box">
+            <div>
+                <!-- 宽高为 100px 的预览区域 -->
+                <div class="img-preview w100"></div>
+                <p class="size">100 x 100</p>
+            </div>
+            <div>
+                <!-- 宽高为 50px 的预览区域 -->
+                <div class="img-preview w50"></div>
+                <p class="size">50 x 50</p>
+            </div>
+            </div>
+            </div>
+
+        <!-- 第二行的按钮区域 -->
+            <div class="row2">
+                <!-- 通过accept可以控制文件的上传类型 -->
+            <input type="file" accept="image/png,image/jpeg" id="file_img" >
+            <button type="button" class="layui-btn" id="btnChooseImage">上传</button>
+            <button type="button" class="layui-btn layui-btn-danger" id="true_imgchange">确定</button>
+            </div>        
+        </div>
+    </div>
+
+</body>
+</html>
