@@ -4,6 +4,7 @@
 
   $.ajaxPrefilter(function(options) {
     // 在发起真正的 Ajax 请求之前，统一拼接请求的根路径
+    // options.url = 'http://www.liulongbin.top:3007' + options.url
     options.url = 'http://api-breakingnews-web.itheima.net' + options.url
 
     //如果url地址存在MY，就是存在权限接口，就要添加一个发送头，携带本地的用户识别码
